@@ -1,9 +1,35 @@
-架構
+# Overview
+
+- [架構](#架構)
+- [Pre-design : ADS 基本操作流程](#pre-design--ads-基本操作流程)
+- [Stage 1 . 一階威爾金生電路](#stage-1--一階威爾金生電路--freq--58-ghz--zo--50-ω-)
+  - [Schematic](#schematic)
+  - [模擬結果](#模擬結果)
+- [Stage 2 : 90-degree Hybrid Coupler](#stage-2--90-degree-hybrid-coupler--freq--58-ghz--zo--50-ω-)
+  - [Schematic](#schematic-1)
+  - [模擬結果](#模擬結果-1)
+- [Stage 3 : 整合電路 ( 6-port Circuit )](#stage-3--整合電路--6-port-circuit-)
+  - [Schematic](#schematic-2)
+  - [模擬結果](#模擬結果-2)
+  - [AutoCAD 繪圖](#autocad-繪圖)
+- [Appendix](#appendix)
+  - [Lincalc](#lincalc)
+  - [m1](#m1)
+  - [Pin number](#pin-number)
+  - [W 和 L 的定義](#w-和-l-的定義)
+  - [適合搭配 螢幕截圖 使用的工具](#適合搭配-螢幕截圖-使用的工具)
+  - [「理想 schematic」轉成「可實作 layout」](#理想-schematic轉成可實作-layout)
+  - [不要只看總物理長度，要看電氣長度](#不要只看總物理長度要看電氣長度)
+  - [ADS 轉 autoCAD 繪圖](#ads-轉-autocad-繪圖)
+
+---
+
+# 架構
 
 ![alt text](image-24.png)
 
 
-開始
+# Pre-design : ADS 基本操作流程
 
 1. 建立新專案
 ```
@@ -86,7 +112,7 @@ ADS 內建一個專門算微帶線的工具 ( `Tools` → `LineCalc` → `Start 
 Step 5. 連接元件
 將元件按照電路圖連接起來，並且在適當的位置放置 TermG 和 R 元件來模擬端口和負載
 
-- 電路圖
+### Schematic
 
 ![alt text](image-5.png)
 
@@ -139,7 +165,7 @@ Step 6. 執行模擬
 
 
 
-### 最終結果分析
+### 模擬結果
 
 ![alt text](image-9.png)
 
@@ -228,11 +254,11 @@ S31 = -3.412 dB
 
 
 
-電路圖
+### Schematic
 
 ![alt text](image-18.png)
 
-模擬
+### 模擬結果
 
 ![alt text](image-19.png)
 
@@ -273,14 +299,14 @@ Port4 ───── Port3
 
 
 
-# Stage 3 : 整合電路 ( 6-port Circuit)
+# Stage 3 : 整合電路 ( 6-port Circuit )
 
-- **Schematic**
+### Schematic 
 
 ![alt text](image-21.png)
 
 
-- **模擬結果**
+### 模擬結果 
 
 ![alt text](image-20.png)
 
@@ -326,7 +352,7 @@ Port 3 和 Port 5 同相
 
 **根據教科書的理想直角分合波器相位關係，Port 1 到 Port 2 的相位移為 90°，Port 1 到 Port 3 的相位移為 180°，因此 Port 2 與 Port 3 兩輸出端之間的相位差為 90°。在 ADS 模擬中，由於傳輸線延伸、彎角與相位包覆效應，輸出端的絕對相位可能與教科書標示不同，因此本設計主要以兩輸出端的相對相位差作為判斷依據。**
 
-### AutoCAD
+### AutoCAD 繪圖
 
 ![alt text](image-23.png)
 
