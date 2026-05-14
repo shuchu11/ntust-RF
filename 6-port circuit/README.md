@@ -1,6 +1,6 @@
 架構
 
-![alt text](image.png)
+![alt text](image-24.png)
 
 
 開始
@@ -335,23 +335,23 @@ Port 3 和 Port 5 同相
 # Appendix
 
 
-## Lincalc 
+#### Lincalc 
 
 ADS 內建一個專門算微帶線的工具 ( `Tools` → `LineCalc` → `Start LineCalc`)
 
 
-## m1
+#### m1
 
 **如何產生 `m1` 標示 :**   選取功能列 `Marker` > `New Line`
 
 
-## Pin number
+#### Pin number
 
 
 ![alt text](image-13.png)
 
 
-# W 和 L 的定義 
+#### W 和 L 的定義 
 > 理論設計中，首先依據目標頻率與特性阻抗計算各段微帶線的初始線寬與線長。然而，由於實際微波電路中存在 T-junction、彎角、端口延伸線、基板損耗與寄生效應，理論尺寸無法完全反映實際電磁行為。因此，本設計以理論值作為初始尺寸，再透過 ADS 模擬觀察 S 參數，並微調線寬與線長，使中心頻率、輸入匹配、輸出功率分配、隔離度與相位差符合設計目標。
 
 
@@ -391,11 +391,11 @@ S31 = -3.412 dB
 代表兩路功率不完全平均，這時微調某些支路線寬來改善功率分配是合理的。
 
 
-# 適合搭配 螢幕截圖 使用的工具
+#### 適合搭配 螢幕截圖 使用的工具
 
 功能列 `View` > `View All` 可以讓你一次看到整個電路，適合搭配螢幕截圖使用
 
-# 「理想 schematic」轉成「可實作 layout」
+#### 「理想 schematic」轉成「可實作 layout」
 
 雖然一線到底的結果很好，但如果加入 MBEND、把水平線和垂直線折成實際 PCB 形狀，S 參數通常會變差，需要重新微調。
 
@@ -407,7 +407,7 @@ MBEND ≠ 純粹轉方向
 MBEND = 轉方向 + 額外寄生電容 + 額外不連續
 ```
 
-# 不要只看總物理長度，要看電氣長度
+#### 不要只看總物理長度，要看電氣長度
 
 你不能只說：
 ```
@@ -430,7 +430,7 @@ MLIN1 + MLIN2 通常要略小於原本 L
 
 
 
-# ADS 轉 autoCAD 繪圖
+#### ADS 轉 autoCAD 繪圖
 
 1. `View` > `Docking windows` > `Layers windows` > `Export to AutoCAD DXF`
 
